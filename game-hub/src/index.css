@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.grid-container{
+    
+    background-color: yellow;
+    display: grid;
+    grid-template-areas: 
+    "navbar navbar navbar navbar navbar"
+    "aside header-section header-section header-section header-section"
+    "aside games-section games-section games-section games-section"
+    "aside games-section games-section games-section games-section";
+
+    grid-template-columns: auto minmax(0, 1fr);
+}
+
+.navbar{
+    background-color: red;
+    grid-area: navbar;
+}
+
+.aside {
+    background-color: blue;
+    grid-area: aside;
+    width: 100px;
+    
+}
+
+.header-section {
+    background-color: green;
+    grid-area: header-section;
+}
+
+.games-section{
+    background-color: violet;
+    grid-area: games-section;
+}
