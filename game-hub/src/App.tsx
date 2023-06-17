@@ -1,7 +1,11 @@
+import NavBar from "./components/NavBar";
+
 function App() {
   return (
     <div className="grid-container">
-      <div className="navbar">NavBar</div>
+      <div className="navbar">
+        <NavBar />
+      </div>
       <div className="aside">
         <h1>Aside</h1>
         <ul>1</ul>
