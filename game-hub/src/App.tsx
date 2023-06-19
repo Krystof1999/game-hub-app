@@ -1,4 +1,5 @@
 import Aside from "./components/Aside";
+import GamesSection from "./components/GamesSection";
 import HeaderSectoin from "./components/HeaderSectoin";
 import NavBar from "./components/NavBar";
 
@@ -14,7 +15,9 @@ function App() {
       <div className="header-section">
         <HeaderSectoin />
       </div>
-      <div className="games-section">GamesSection</div>
+      <div className="games-section">
+        <GamesSection />
+      </div>
     </div>
   );
 }
