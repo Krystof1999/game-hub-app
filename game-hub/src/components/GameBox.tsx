@@ -9,6 +9,7 @@ import { IoIosGlobe } from "@react-icons/all-files/io/IoIosGlobe";
 import { FaLinux } from "@react-icons/all-files/fa/FaLinux";
 import { SiNintendoswitch } from "@react-icons/all-files/si/SiNintendoswitch";
 import RatingEmoji from "./RatingEmoji";
+import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   game: Game;
@@ -16,7 +17,6 @@ interface Props {
 
 const GameBox = ({ game }: Props) => {
   const platforms = game.parent_platforms.map((platform) => platform.platform);
-  console.log(game.rating_top);
 
   const iconMap: { [key: string]: any } = {
     pc: <HiOutlineDesktopComputer />,
@@ -32,7 +32,10 @@ const GameBox = ({ game }: Props) => {
 
   return (
     <div className=" bg-custom-light-black rounded-xl w-[350px]">
-      <img src={game.background_image} className="rounded-xl" />
+      <img
+        src={getCroppedImageUrl(game.background_image)}
+        className="rounded-xl"
+      />
       <div className="pl-4 pt-4">
         <div className="flex justify-between">
           <div className="flex gap-2 text-gray-400">
