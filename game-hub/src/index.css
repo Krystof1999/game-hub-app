@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --black: #1e1e1e
+}
+
 .grid-container{
     
     background-color: yellow;
@@ -16,7 +20,7 @@
 }
 
 .navbar{
-    background-color: #1e1e1e;
+    background-color: var(--black);
     grid-area: navbar;
 }
 
