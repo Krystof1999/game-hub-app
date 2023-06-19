@@ -6,14 +6,14 @@ const RatingEmoji = ({ rating }: Props) => {
   if (rating < 3) return null;
 
   const emojiMap: { [key: string]: any } = {
-    3: { src: "/src/assets/assets/meh.webp", alt: "meh", width: "25px" },
+    3: { src: "/src/assets/meh.webp", alt: "meh", width: "25px" },
     4: {
-      src: "/src/assets/assets/thumbs-up.webp",
+      src: "/src/assets/thumbs-up.webp",
       alt: "thumbsUp",
       width: "25px",
     },
     5: {
-      src: "/src/assets/assets/bulls-eye.webp",
+      src: "/src/assets/bulls-eye.webp",
       alt: "bullsEye",
       width: "35px",
     },
