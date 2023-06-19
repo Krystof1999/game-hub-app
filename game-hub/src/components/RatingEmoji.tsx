@@ -20,7 +20,7 @@ const RatingEmoji = ({ rating }: Props) => {
   };
 
   return (
-    <div>
+    <div className="mt-4">
       <img {...emojiMap[rating]} />
     </div>
   );

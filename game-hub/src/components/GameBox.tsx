@@ -10,6 +10,7 @@ import { FaLinux } from "@react-icons/all-files/fa/FaLinux";
 import { SiNintendoswitch } from "@react-icons/all-files/si/SiNintendoswitch";
 import RatingEmoji from "./RatingEmoji";
 import getCroppedImageUrl from "../services/image-url";
+import CriticsNumber from "./ScoreNumber";
 
 interface Props {
   game: Game;
@@ -31,19 +32,19 @@ const GameBox = ({ game }: Props) => {
   };
 
   return (
-    <div className=" bg-custom-light-black rounded-xl w-[350px]">
+    <div className=" bg-custom-light-black rounded-xl w-[420px] pb-4 mb-6">
       <img
         src={getCroppedImageUrl(game.background_image)}
         className="rounded-xl"
       />
       <div className="pl-4 pt-4">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <div className="flex gap-2 text-gray-400">
             {platforms.map((platform) => (
               <p key={platform.id}>{iconMap[platform.slug]}</p>
             ))}
           </div>
-          <p>score</p>
+          <CriticsNumber score={game.metacritic} />
         </div>
         <h2 className="text-white font-semibold">{game.name}</h2>
         <RatingEmoji rating={game.rating_top} />

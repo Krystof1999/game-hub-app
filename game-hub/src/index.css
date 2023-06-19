@@ -41,6 +41,6 @@
 }
 
 .games-section{
-    background-color: violet;
+    background-color: var(--black);
     grid-area: games-section;
 }

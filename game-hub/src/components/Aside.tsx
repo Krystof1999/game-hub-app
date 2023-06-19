@@ -1,6 +1,6 @@
 const Aside = () => {
   return (
-    <div className="pl-4 bg-custom-black text-white pr-10">
+    <div className="pl-4 bg-custom-black text-white pr-14">
       <h1 className=" text-[20px] font-semibold">Genres</h1>
       <div className="flex">
         <img src="game-hub/src/assets/logo.webp" />
