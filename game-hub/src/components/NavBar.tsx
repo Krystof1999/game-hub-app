@@ -12,13 +12,13 @@ const NavBar = () => {
       <div className="w-16 h-16">
         <img src="/src/assets/logo.webp" alt="navbar-logo" className=" " />
       </div>
-      <div className="flex-grow bg-[#3c3c3c] rounded-full p-1">
+      <div className="flex-grow bg-custom-light-black rounded-full p-1">
         <form className="flex w-full items-center">
           <AiOutlineSearch color="white" size="23px" />
           <input
             type="text"
             placeholder="Search games..."
-            className="w-full bg-[#3c3c3c] border-0 outline-none text-white"
+            className="w-full bg-custom-light-black border-0 outline-none text-white"
           />
         </form>
       </div>
