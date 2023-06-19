@@ -1,3 +1,5 @@
+import Aside from "./components/Aside";
+import HeaderSectoin from "./components/HeaderSectoin";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -7,17 +9,11 @@ function App() {
         <NavBar />
       </div>
       <div className="aside">
-        <h1>Aside</h1>
-        <ul>1</ul>
-        <ul>2</ul>
-        <ul>3</ul>
-        <ul>4</ul>
-        <ul>5</ul>
-        <ul>6</ul>
-        <ul>6</ul>
-        <ul>6</ul>
+        <Aside />
       </div>
-      <div className="header-section">HeaderSection</div>
+      <div className="header-section">
+        <HeaderSectoin />
+      </div>
       <div className="games-section">GamesSection</div>
     </div>
   );

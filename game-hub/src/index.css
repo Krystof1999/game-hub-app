@@ -7,14 +7,18 @@
 }
 
 .grid-container{
-    
-    background-color: yellow;
     display: grid;
-    grid-template-areas: 
+    /* grid-template-areas: 
     "navbar navbar navbar navbar navbar"
     "aside header-section header-section header-section header-section"
     "aside games-section games-section games-section games-section"
-    "aside games-section games-section games-section games-section";
+    "aside games-section games-section games-section games-section"; */
+
+    grid-template-areas: 
+    "navbar navbar"
+    "aside header-section"
+    "aside games-section"
+    "aside games-section";
 
     grid-template-columns: auto minmax(0, 1fr);
 }
@@ -25,9 +29,9 @@
 }
 
 .aside {
-    background-color: blue;
+    /* background-color: blue; */
     grid-area: aside;
-    width: 100px;
+    /* width: 100px; */
     
 }
 
