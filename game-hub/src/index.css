@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-    --black: #1e1e1e
+    --black: #1e1e1e;
+    --lightBlack: #3c3c3c;
 }
 
 .grid-container{
@@ -44,3 +45,8 @@
     background-color: var(--black);
     grid-area: games-section;
 }
+
+/* Dropdown menu */
+.szh-menu {
+    background-color: var(--lightBlack)
+  }
