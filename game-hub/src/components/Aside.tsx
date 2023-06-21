@@ -2,7 +2,6 @@ import useGenres from "../hooks/useGenres";
 
 const Aside = () => {
   const { genres } = useGenres();
-  // console.log(genres);
 
   return (
     <div className="pl-4 bg-custom-black text-white pr-14">

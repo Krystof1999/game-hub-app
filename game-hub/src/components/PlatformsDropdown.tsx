@@ -1,7 +1,13 @@
 import { MdKeyboardArrowDown } from "@react-icons/all-files/md/MdKeyboardArrowDown";
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
+import usePlatforms from "../hooks/usePlatforms";
 
 const PlatformsDropdown = () => {
+  const { platforms } = usePlatforms();
+
+  {
+  }
+
   return (
     <Menu
       menuButton={
@@ -19,8 +25,11 @@ const PlatformsDropdown = () => {
     >
       Cut
     </MenuItem> */}
-
-        <MenuItem>Copy</MenuItem>
+        {platforms.map((platform) => (
+          <MenuItem key={platform.id} onClick={() => console.log(platform)}>
+            {platform.name}
+          </MenuItem>
+        ))}
       </div>
     </Menu>
   );
