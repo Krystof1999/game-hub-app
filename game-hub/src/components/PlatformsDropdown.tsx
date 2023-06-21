@@ -3,10 +3,9 @@ import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
 import usePlatforms from "../hooks/usePlatforms";
 
 const PlatformsDropdown = () => {
-  const { platforms } = usePlatforms();
+  const { data, error } = usePlatforms();
 
-  {
-  }
+  if (error) return null;
 
   return (
     <Menu
@@ -25,7 +24,8 @@ const PlatformsDropdown = () => {
     >
       Cut
     </MenuItem> */}
-        {platforms.map((platform) => (
+
+        {data.map((platform) => (
           <MenuItem key={platform.id} onClick={() => console.log(platform)}>
             {platform.name}
           </MenuItem>
