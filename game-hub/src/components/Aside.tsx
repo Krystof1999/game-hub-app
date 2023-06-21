@@ -1,20 +1,22 @@
+import useGenres from "../hooks/useGenres";
+
 const Aside = () => {
+  const { genres } = useGenres();
+  // console.log(genres);
+
   return (
     <div className="pl-4 bg-custom-black text-white pr-14">
-      <h1 className=" text-[20px] font-semibold">Genres</h1>
-      <div className="flex">
-        <img src="game-hub/src/assets/logo.webp" />
-        <p>Massively Multiplayer</p>
-      </div>
+      <h1 className=" text-[25px] font-semibold mb-4">Genres</h1>
+      {genres.map((genre) => (
+        <ul className="flex items-center mb-4" key={genre.id}>
+          <img
+            src={genre.image_background}
+            className="rounded-md w-10 h-10 object-cover"
+          />
 
-      {/* <ul>Action</ul>
-      <ul>Adventure</ul>
-      <ul>Massively Multiplayer</ul>
-      <ul>4</ul>
-      <ul>5</ul>
-      <ul>6</ul>
-      <ul>6</ul>
-      <ul>6</ul> */}
+          <p className="pl-3">{genre.name}</p>
+        </ul>
+      ))}
     </div>
   );
 };

@@ -30,7 +30,7 @@
 }
 
 .aside {
-    /* background-color: blue; */
+    background-color: var(--black);
     grid-area: aside;
     /* width: 100px; */
     
