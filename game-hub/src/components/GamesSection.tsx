@@ -1,8 +1,8 @@
 import useGames from "../hooks/useGames";
 import GameBox from "./GameBox";
 
-const GamesSection = () => {
-  const { data } = useGames();
+const GamesSection = ({ gameQuery }) => {
+  const { data } = useGames(gameQuery); // Todo - give a gameQuery object
 
   return (
     <div className="grid grid-cols-4">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 import useData from "./useData";
+import { GameQuery } from "../App";
 
 interface Platform {
   id: number;
@@ -17,10 +18,9 @@ export interface Game {
   metacritic: number;
 }
 
-// interface FetchedGamesResponse {
-//   results: Game[];
-// }
-
-const useGames = () => useData<Game>("/games");
+const useGames = (gameQuery: GameQuery) =>
+  useData<Game>("/games", { params: { genres: gameQuery.genre?.id } }, [
+    gameQuery,
+  ]);
 
 export default useGames;
