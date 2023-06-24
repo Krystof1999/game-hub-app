@@ -3,7 +3,7 @@ import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 import useData from "./useData";
 
-interface Platform {
+export interface Platform {
   id: number;
   name: string;
   slug: string;

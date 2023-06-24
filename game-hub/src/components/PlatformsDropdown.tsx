@@ -1,8 +1,12 @@
 import { MdKeyboardArrowDown } from "@react-icons/all-files/md/MdKeyboardArrowDown";
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
-import usePlatforms from "../hooks/usePlatforms";
+import usePlatforms, { Platform } from "../hooks/usePlatforms";
 
-const PlatformsDropdown = () => {
+interface Props {
+  onSelectedPlatform: (platform: Platform) => void;
+}
+
+const PlatformsDropdown = ({ onSelectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
 
   if (error) return null;
@@ -26,7 +30,10 @@ const PlatformsDropdown = () => {
     </MenuItem> */}
 
         {data.map((platform) => (
-          <MenuItem key={platform.id} onClick={() => console.log(platform)}>
+          <MenuItem
+            key={platform.id}
+            onClick={() => onSelectedPlatform(platform)}
+          >
             {platform.name}
           </MenuItem>
         ))}

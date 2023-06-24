@@ -4,9 +4,11 @@ import GamesSection from "./components/GamesSection";
 import HeaderSectoin from "./components/HeaderSectoin";
 import NavBar from "./components/NavBar";
 import { Genre } from "./hooks/useGenres";
+import { Platform } from "./hooks/usePlatforms";
 
 export interface GameQuery {
   genre: Genre | null;
+  platform: Platform | null;
 }
 
 function App() {
@@ -23,7 +25,11 @@ function App() {
         />
       </div>
       <div className="header-section">
-        <HeaderSectoin />
+        <HeaderSectoin
+          onSelectedPlatform={(platform) =>
+            setGameQuery({ ...gameQuery, platform: platform })
+          }
+        />
       </div>
       <div className="games-section">
         <GamesSection gameQuery={gameQuery} />
