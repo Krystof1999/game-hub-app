@@ -2,9 +2,14 @@ import { AiOutlineSearch } from "@react-icons/all-files/ai/AiOutlineSearch";
 import CustomSwitch from "./CustomSwitch";
 import { FiSun } from "@react-icons/all-files/fi/FiSun";
 import { BiMoon } from "@react-icons/all-files/bi/BiMoon";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchValue: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
   const [checked, setChecked] = useState(false);
 
   return (
@@ -13,9 +18,16 @@ const NavBar = () => {
         <img src="/src/assets/logo.webp" alt="navbar-logo" className=" " />
       </div>
       <div className="flex-grow bg-custom-light-black rounded-full p-1">
-        <form className="flex w-full items-center">
+        <form
+          className="flex w-full items-center"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (ref.current) onSearch(ref.current.value);
+          }}
+        >
           <AiOutlineSearch color="white" size="23px" />
           <input
+            ref={ref}
             type="text"
             placeholder="Search games..."
             className="w-full bg-custom-light-black border-0 outline-none text-white"

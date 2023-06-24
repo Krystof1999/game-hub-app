@@ -9,6 +9,7 @@ import { Platform } from "./hooks/usePlatforms";
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  search: string | null;
 }
 
 function App() {
@@ -17,7 +18,11 @@ function App() {
   return (
     <div className="grid-container">
       <div className="navbar">
-        <NavBar />
+        <NavBar
+          onSearch={(searchValue) =>
+            setGameQuery({ ...gameQuery, search: searchValue })
+          }
+        />
       </div>
       <div className="aside">
         <Aside
