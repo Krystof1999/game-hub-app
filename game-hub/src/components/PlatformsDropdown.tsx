@@ -4,10 +4,10 @@ import usePlatforms, { Platform } from "../hooks/usePlatforms";
 
 interface Props {
   onSelectedPlatform: (platform: Platform) => void;
-  platform: Platform | null;
+  selectedPlatform: Platform | null;
 }
 
-const PlatformsDropdown = ({ onSelectedPlatform, platform }: Props) => {
+const PlatformsDropdown = ({ onSelectedPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
 
   if (error) return null;
@@ -16,7 +16,7 @@ const PlatformsDropdown = ({ onSelectedPlatform, platform }: Props) => {
     <Menu
       menuButton={
         <MenuButton className="flex place-items-end bg-custom-light-black p-2 rounded-md mr-2">
-          {platform?.name || "Platforms"}
+          {selectedPlatform?.name || "Platforms"}
           <MdKeyboardArrowDown size="18px" />
         </MenuButton>
       }

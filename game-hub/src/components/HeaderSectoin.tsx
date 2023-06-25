@@ -2,28 +2,33 @@ import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import PlatformsDropdown from "./PlatformsDropdown";
 import { Platform } from "../hooks/usePlatforms";
-import OrderDropdown, { Order } from "./OrderDropdown";
+import OrderDropdown from "./OrderDropdown";
 
 interface Props {
   onSelectedPlatform: (platform: Platform) => void;
-  platform: Platform | null;
-  onSelectedOrder: (order: Order) => void;
+  selectedPlatform: Platform | null;
+  onSelectedOrder: (order: string) => void;
+  selectedOrder: string;
 }
 
 const HeaderSectoin = ({
   onSelectedPlatform,
-  platform,
+  selectedPlatform,
   onSelectedOrder,
+  selectedOrder,
 }: Props) => {
   return (
     <div className="text-white bg-custom-black pt-4">
       <h1 className="font-bold text-[40px]">Games</h1>
       <div className="flex mb-4">
         <PlatformsDropdown
-          platform={platform}
+          selectedPlatform={selectedPlatform}
           onSelectedPlatform={onSelectedPlatform}
         />
-        <OrderDropdown onSelectedOrder={onSelectedOrder} />
+        <OrderDropdown
+          onSelectedOrder={onSelectedOrder}
+          selectedOrder={selectedOrder}
+        />
       </div>
     </div>
   );

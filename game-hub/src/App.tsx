@@ -5,13 +5,12 @@ import HeaderSectoin from "./components/HeaderSectoin";
 import NavBar from "./components/NavBar";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
-import { Order } from "./components/OrderDropdown";
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   search: string | null;
-  ordering: Order | null;
+  ordering: string;
 }
 
 function App() {
@@ -33,13 +32,14 @@ function App() {
       </div>
       <div className="header-section">
         <HeaderSectoin
-          platform={gameQuery.platform}
+          selectedPlatform={gameQuery.platform}
           onSelectedPlatform={(platform) =>
             setGameQuery({ ...gameQuery, platform })
           }
           onSelectedOrder={(order) =>
             setGameQuery({ ...gameQuery, ordering: order })
           }
+          selectedOrder={gameQuery.ordering}
         />
       </div>
       <div className="games-section">
