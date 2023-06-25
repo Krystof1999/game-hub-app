@@ -31,6 +31,7 @@ function App() {
       </div>
       <div className="header-section">
         <HeaderSectoin
+          platform={gameQuery.platform}
           onSelectedPlatform={(platform) =>
             setGameQuery({ ...gameQuery, platform })
           }
