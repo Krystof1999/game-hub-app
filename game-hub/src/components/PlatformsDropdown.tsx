@@ -15,7 +15,7 @@ const PlatformsDropdown = ({ onSelectedPlatform, platform }: Props) => {
   return (
     <Menu
       menuButton={
-        <MenuButton className="flex place-items-end bg-custom-light-black p-2 rounded-md">
+        <MenuButton className="flex place-items-end bg-custom-light-black p-2 rounded-md mr-2">
           {platform?.name || "Platforms"}
           <MdKeyboardArrowDown size="18px" />
         </MenuButton>
