@@ -1,8 +1,13 @@
+import { GameQuery } from "../App";
 import useGames from "../hooks/useGames";
 import GameBox from "./GameBox";
 
-const GamesSection = ({ gameQuery }) => {
-  const { data } = useGames(gameQuery); // Todo - give a gameQuery object
+interface Props {
+  gameQuery: GameQuery;
+}
+
+const GamesSection = ({ gameQuery }: Props) => {
+  const { data } = useGames(gameQuery);
 
   return (
     <div className="grid grid-cols-4">
