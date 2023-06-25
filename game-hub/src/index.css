@@ -9,18 +9,12 @@
 
 .grid-container{
     display: grid;
-    /* grid-template-areas: 
-    "navbar navbar navbar navbar navbar"
-    "aside header-section header-section header-section header-section"
-    "aside games-section games-section games-section games-section"
-    "aside games-section games-section games-section games-section"; */
-
     grid-template-areas: 
     "navbar navbar"
     "aside header-section"
     "aside games-section"
     "aside games-section";
-
+    
     grid-template-columns: auto minmax(0, 1fr);
 }
 
@@ -31,9 +25,7 @@
 
 .aside {
     background-color: var(--black);
-    grid-area: aside;
-    /* width: 100px; */
-    
+    grid-area: aside;  
 }
 
 .header-section {
@@ -53,5 +45,4 @@
 
   .szh-menu__item:hover{
     background-color: #4d4d4d;
-
   }

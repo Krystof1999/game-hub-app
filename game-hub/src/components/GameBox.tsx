@@ -33,7 +33,7 @@ const GameBox = ({ game }: Props) => {
 
   return (
     <div className=" bg-custom-light-black rounded-xl w-[420px] pb-4 mb-6 overflow-hidden">
-      <img src={getCroppedImageUrl(game.background_image)} className="" />
+      <img src={getCroppedImageUrl(game.background_image)} />
       <div className="pl-4 pt-4">
         <div className="flex justify-between items-center">
           <div className="flex gap-2 text-gray-400">
