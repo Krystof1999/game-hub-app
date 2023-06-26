@@ -10,6 +10,6 @@ export interface Genre {
 //   results: Genre[];
 // }
 
-const useGenres = () => ({ data: genres, isLoading: false, error: null });
+const useGenres = () => ({ data: genres, error: null, isLoading: false });
 
 export default useGenres;
