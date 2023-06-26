@@ -5,7 +5,6 @@ import HeaderSectoin from "./components/HeaderSectoin";
 import NavBar from "./components/NavBar";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
-import GameBoxSkeleton from "./components/GameBoxSkeleton";
 
 export interface GameQuery {
   genre: Genre | null;

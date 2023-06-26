@@ -6,10 +6,6 @@ export interface Platform {
   slug: string;
 }
 
-// interface FetchedPlatformsResponse {
-//   results: Platform[];
-// }
-
 const usePlatforms = () => ({ data: platforms, error: null, isLoading: false });
 
 export default usePlatforms;

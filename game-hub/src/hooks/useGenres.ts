@@ -5,11 +5,6 @@ export interface Genre {
   name: string;
   image_background: string;
 }
-
-// interface FetchedGenresResponse {
-//   results: Genre[];
-// }
-
 const useGenres = () => ({ data: genres, error: null, isLoading: false });
 
 export default useGenres;

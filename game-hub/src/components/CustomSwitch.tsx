@@ -13,8 +13,6 @@ const App = ({ checked, setChecked }: Props) => {
       id="normal-switch"
       uncheckedIcon={false}
       checkedIcon={false}
-      // offColor={"#8BB7F0"}
-      // onColor={"#8BB7F0"}
       handleDiameter={21}
       height={26}
       width={50}

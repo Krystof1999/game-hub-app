@@ -2,8 +2,6 @@ interface Props {
   score: number;
 }
 
-// TODO: Why is this not working?
-
 const ScoreNumber = ({ score }: Props) => {
   const backgroundColor = score > 75 ? "green" : score > 65 ? "yellow" : "";
 
