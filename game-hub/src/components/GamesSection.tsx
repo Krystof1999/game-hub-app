@@ -15,7 +15,7 @@ const GamesSection = ({ gameQuery }: Props) => {
       <div className="grid grid-cols-4">
         {!isLoading
           ? data.map((game) => <GameBox key={game.name} game={game} />)
-          : data.map(() => <GameBoxSkeleton />)}
+          : data.map((game) => <GameBoxSkeleton key={game.name} />)}
       </div>
     </>
   );
