@@ -7,6 +7,11 @@
     --lightBlack: #3c3c3c;
 }
 
+/*For reload purpouses*/
+html {
+    background-color: var(--black);
+}
+
 .grid-container{
     display: grid;
     grid-template-areas: 
