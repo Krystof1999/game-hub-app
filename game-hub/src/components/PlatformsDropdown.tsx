@@ -23,7 +23,7 @@ const PlatformsDropdown = ({ onSelectedPlatform, selectedPlatform }: Props) => {
       transition
     >
       <div className="text-white">
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             key={platform.id}
             onClick={() => onSelectedPlatform(platform)}

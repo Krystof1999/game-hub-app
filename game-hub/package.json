@@ -12,6 +12,8 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@szhsin/react-menu": "^4.0.0",
+    "@tanstack/react-query": "^4.29.19",
+    "@tanstack/react-query-devtools": "^4.29.19",
     "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
