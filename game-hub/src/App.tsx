@@ -42,6 +42,7 @@ function App() {
             setGameQuery({ ...gameQuery, ordering: order })
           }
           selectedOrder={gameQuery.ordering}
+          selectedGenreId={gameQuery.genreId}
         />
       </div>
       <div className="games-section">
