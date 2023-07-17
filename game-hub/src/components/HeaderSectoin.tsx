@@ -1,9 +1,10 @@
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
-import PlatformsDropdown from "./PlatformsDropdown";
-import usePlatforms, { Platform } from "../hooks/usePlatforms";
+import useGenre from "../hooks/useGenre";
+import usePlatform from "../hooks/usePlatform";
+import { Platform } from "../hooks/usePlatforms";
 import OrderDropdown from "./OrderDropdown";
-import useGenres from "../hooks/useGenres";
+import PlatformsDropdown from "./PlatformsDropdown";
 
 interface Props {
   onSelectedPlatform: (platform: Platform) => void;
@@ -20,14 +21,8 @@ const HeaderSectoin = ({
   selectedOrder,
   selectedGenreId,
 }: Props) => {
-  const { data: platforms } = usePlatforms();
-  const { data: genres } = useGenres();
-
-  const selectedPlatform = platforms?.results.find(
-    (p) => p.id === selectedPlatformId
-  );
-
-  const selectedGenre = genres.results.find((g) => g.id === selectedGenreId);
+  const selectedPlatform = usePlatform(selectedPlatformId);
+  const selectedGenre = useGenre(selectedGenreId);
 
   const heading = `${selectedPlatform?.name || ""} ${
     selectedGenre?.name || ""
