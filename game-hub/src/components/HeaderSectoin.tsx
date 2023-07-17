@@ -6,14 +6,14 @@ import OrderDropdown from "./OrderDropdown";
 
 interface Props {
   onSelectedPlatform: (platform: Platform) => void;
-  selectedPlatform: Platform | null;
+  selectedPlatformId?: number;
   onSelectedOrder: (order: string) => void;
   selectedOrder: string;
 }
 
 const HeaderSectoin = ({
   onSelectedPlatform,
-  selectedPlatform,
+  selectedPlatformId,
   onSelectedOrder,
   selectedOrder,
 }: Props) => {
@@ -22,7 +22,7 @@ const HeaderSectoin = ({
       <h1 className="font-bold text-[40px]">Games</h1>
       <div className="flex mb-4">
         <PlatformsDropdown
-          selectedPlatform={selectedPlatform}
+          selectedPlatformId={selectedPlatformId}
           onSelectedPlatform={onSelectedPlatform}
         />
         <OrderDropdown

@@ -3,12 +3,12 @@ import Aside from "./components/Aside";
 import GamesSection from "./components/GamesSection";
 import HeaderSectoin from "./components/HeaderSectoin";
 import NavBar from "./components/NavBar";
-import { Genre } from "./hooks/useGenres";
-import { Platform } from "./hooks/usePlatforms";
 
+// undefined: the absence of a value
+// null: the intenational absence of a value
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   search: string | null;
   ordering: string;
 }
@@ -27,14 +27,16 @@ function App() {
       </div>
       <div className="aside">
         <Aside
-          onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+          onSelectedGenre={(genre) =>
+            setGameQuery({ ...gameQuery, genreId: genre.id })
+          }
         />
       </div>
       <div className="header-section">
         <HeaderSectoin
-          selectedPlatform={gameQuery.platform}
+          selectedPlatformId={gameQuery.platformId}
           onSelectedPlatform={(platform) =>
-            setGameQuery({ ...gameQuery, platform })
+            setGameQuery({ ...gameQuery, platformId: platform.id })
           }
           onSelectedOrder={(order) =>
             setGameQuery({ ...gameQuery, ordering: order })
