@@ -3,6 +3,7 @@ import { GameQuery } from "../App";
 import APIClient from "../services/api-client";
 import { FetchResponse } from "../services/api-client";
 import { Platform } from "./usePlatforms";
+import ms from "ms";
 
 const apiClient = new APIClient<Game>("/games");
 
@@ -36,7 +37,7 @@ const useGames = (gameQuery: GameQuery) => {
       apiClient.getAll({
         params: {
           genres: gameQuery.genreId,
-          platforms: gameQuery.platform?.id,
+          platforms: gameQuery.platformId,
           search: gameQuery.search,
           ordering: gameQuery.ordering,
           page: pageParam,
@@ -45,7 +46,7 @@ const useGames = (gameQuery: GameQuery) => {
     getNextPageParam: (lastPage, allPages) => {
       return lastPage.next ? allPages.length + 1 : undefined;
     },
-    staleTime: 24 * 60 * 60 * 1000, //24H
+    staleTime: ms("24h"),
   });
 };
 
