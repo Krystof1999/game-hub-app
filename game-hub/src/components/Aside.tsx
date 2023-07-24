@@ -1,11 +1,9 @@
-import useGenres, { Genre } from "../hooks/useGenres";
+import useGenres from "../hooks/useGenres";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectedGenre: (genre: Genre) => void;
-}
-
-const Aside = ({ onSelectedGenre }: Props) => {
+const Aside = () => {
   const { data } = useGenres();
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
 
   return (
     <div className="pl-4 bg-custom-black text-white pr-14">
@@ -19,7 +17,7 @@ const Aside = ({ onSelectedGenre }: Props) => {
 
           <p
             className="pl-3 cursor-pointer hover:underline"
-            onClick={() => onSelectedGenre(genre)}
+            onClick={() => setGenreId(genre.id)}
           >
             {genre.name}
           </p>

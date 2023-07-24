@@ -1,14 +1,13 @@
 import { AiOutlineSearch } from "@react-icons/all-files/ai/AiOutlineSearch";
-import CustomSwitch from "./CustomSwitch";
-import { FiSun } from "@react-icons/all-files/fi/FiSun";
 import { BiMoon } from "@react-icons/all-files/bi/BiMoon";
+import { FiSun } from "@react-icons/all-files/fi/FiSun";
 import { useRef, useState } from "react";
+import useGameQueryStore from "../store";
+import CustomSwitch from "./CustomSwitch";
 
-interface Props {
-  onSearch: (searchValue: string) => void;
-}
+const NavBar = () => {
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
 
-const NavBar = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
   const [checked, setChecked] = useState(false);
 
@@ -22,7 +21,7 @@ const NavBar = ({ onSearch }: Props) => {
           className="flex w-full items-center"
           onSubmit={(e) => {
             e.preventDefault();
-            if (ref.current) onSearch(ref.current.value);
+            if (ref.current) setSearchText(ref.current.value);
           }}
         >
           <AiOutlineSearch color="white" size="23px" />

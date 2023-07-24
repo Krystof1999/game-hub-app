@@ -1,20 +1,14 @@
 import React from "react";
-import { GameQuery } from "../App";
+import InfiniteScroll from "react-infinite-scroll-component";
 import useGames from "../hooks/useGames";
 import GameBox from "./GameBox";
-import GameBoxSkeleton from "./GameBoxSkeleton";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 //TODO - Fix the bug
 //TODO - Add the sceleton for GameBox
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GamesSection = ({ gameQuery }: Props) => {
+const GamesSection = () => {
   const { data, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } =
-    useGames(gameQuery);
+    useGames();
 
   const fetchedGamesCount =
     data?.pages.reduce((total, pages) => total + pages.results.length, 0) || 0;

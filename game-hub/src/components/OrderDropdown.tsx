@@ -1,12 +1,8 @@
 import { MdKeyboardArrowDown } from "@react-icons/all-files/md/MdKeyboardArrowDown";
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectedOrder: (order: string) => void;
-  selectedOrder: string;
-}
-
-const OrderDropdown = ({ onSelectedOrder, selectedOrder }: Props) => {
+const OrderDropdown = () => {
   const sortOrder = [
     { querry: "name", label: "Name" },
     { querry: "-released", label: "Released" },
@@ -15,8 +11,11 @@ const OrderDropdown = ({ onSelectedOrder, selectedOrder }: Props) => {
     { querry: "-metacritic", label: "Popularity" },
   ];
 
+  const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+
+  const selectedSortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const currentOrder = sortOrder.find(
-    (order) => order.querry === selectedOrder
+    (order) => order.querry === selectedSortOrder
   );
 
   return (
@@ -33,7 +32,7 @@ const OrderDropdown = ({ onSelectedOrder, selectedOrder }: Props) => {
         {sortOrder.map((order) => (
           <MenuItem
             key={order.label}
-            onClick={() => onSelectedOrder(order.querry)}
+            onClick={() => setSortOrder(order.querry)}
           >
             {order.label}
           </MenuItem>

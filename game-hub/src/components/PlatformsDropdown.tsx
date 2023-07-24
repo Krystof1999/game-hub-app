@@ -1,17 +1,12 @@
 import { MdKeyboardArrowDown } from "@react-icons/all-files/md/MdKeyboardArrowDown";
 import { Menu, MenuButton, MenuItem } from "@szhsin/react-menu";
-import usePlatforms, { Platform } from "../hooks/usePlatforms";
 import usePlatform from "../hooks/usePlatform";
+import usePlatforms from "../hooks/usePlatforms";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectedPlatform: (platform: Platform) => void;
-  selectedPlatformId?: number;
-}
-
-const PlatformsDropdown = ({
-  onSelectedPlatform,
-  selectedPlatformId,
-}: Props) => {
+const PlatformsDropdown = () => {
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
   const { data, error } = usePlatforms();
 
   const selectedPlatform = usePlatform(selectedPlatformId);
@@ -32,7 +27,7 @@ const PlatformsDropdown = ({
         {data?.results.map((platform) => (
           <MenuItem
             key={platform.id}
-            onClick={() => onSelectedPlatform(platform)}
+            onClick={() => setSelectedPlatformId(platform.id)}
           >
             {platform.name}
           </MenuItem>
