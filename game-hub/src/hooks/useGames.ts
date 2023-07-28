@@ -10,6 +10,8 @@ const apiClient = new APIClient<Game>("/games");
 export interface Game {
   background_image: string;
   name: string;
+  slug: string;
+  description_raw: string;
   parent_platforms: { platform: Platform }[];
   rating_top: number;
   metacritic: number;

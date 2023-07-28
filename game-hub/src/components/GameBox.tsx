@@ -11,6 +11,7 @@ import { SiNintendoswitch } from "@react-icons/all-files/si/SiNintendoswitch";
 import RatingEmoji from "./RatingEmoji";
 import getCroppedImageUrl from "../services/image-url";
 import CriticsNumber from "./ScoreNumber";
+import { Link } from "react-router-dom";
 
 interface Props {
   game: Game;
@@ -43,7 +44,9 @@ const GameBox = ({ game }: Props) => {
           </div>
           <CriticsNumber score={game.metacritic} />
         </div>
-        <h2 className="text-white font-semibold">{game.name}</h2>
+        <h2 className="text-white font-semibold">
+          <Link to={"games/" + game.slug}>{game.name}</Link>
+        </h2>
         <RatingEmoji rating={game.rating_top} />
       </div>
     </div>
