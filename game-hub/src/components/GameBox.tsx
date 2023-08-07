@@ -10,7 +10,7 @@ import { FaLinux } from "@react-icons/all-files/fa/FaLinux";
 import { SiNintendoswitch } from "@react-icons/all-files/si/SiNintendoswitch";
 import RatingEmoji from "./RatingEmoji";
 import getCroppedImageUrl from "../services/image-url";
-import CriticsNumber from "./ScoreNumber";
+import ScoreNumber from "./ScoreNumber";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -42,7 +42,7 @@ const GameBox = ({ game }: Props) => {
               <p key={platform.id}>{iconMap[platform.slug]}</p>
             ))}
           </div>
-          <CriticsNumber score={game.metacritic} />
+          <ScoreNumber score={game.metacritic} />
         </div>
         <h2 className="text-white font-semibold">
           <Link to={"games/" + game.slug}>{game.name}</Link>
