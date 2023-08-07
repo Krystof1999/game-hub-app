@@ -1,4 +1,4 @@
-import { Game } from "../hooks/useGames";
+import { Game } from "../entities/Game";
 import DefinitionItem from "./DefinitionItem";
 import ScoreNumber from "./ScoreNumber";
 

@@ -1,4 +1,4 @@
-import { Game } from "../hooks/useGames";
+import { Game } from "../entities/Game";
 import { FaXbox } from "@react-icons/all-files/fa/FaXbox";
 import { FaPlaystation } from "@react-icons/all-files/fa/FaPlaystation";
 import { HiOutlineDesktopComputer } from "@react-icons/all-files/hi/HiOutlineDesktopComputer";
