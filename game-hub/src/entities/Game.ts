@@ -3,6 +3,7 @@ import { Genre } from "./Genre";
 import { Publisher } from "./Publisher";
 
 export interface Game {
+  id: number;
   background_image: string;
   name: string;
   slug: string;

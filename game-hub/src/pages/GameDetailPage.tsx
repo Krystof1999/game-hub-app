@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import ExapndableText from "../components/ExapndableText";
 import GameAttributes from "../components/GameAttributes";
 import useGame from "../hooks/useGame";
+import GameTriler from "../components/GameTriler";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -15,6 +16,7 @@ const GameDetailPage = () => {
       <h1 className="font-bold text-4xl">{game.name}</h1>
       <ExapndableText>{game.description_raw}</ExapndableText>
       <GameAttributes game={game} />
+      <GameTriler gameId={game.id} />
     </div>
   );
 };
