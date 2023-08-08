@@ -3,6 +3,7 @@ import ExapndableText from "../components/ExapndableText";
 import GameAttributes from "../components/GameAttributes";
 import useGame from "../hooks/useGame";
 import GameTriler from "../components/GameTriler";
+import Screenshots from "../components/Screenshots";
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -12,11 +13,12 @@ const GameDetailPage = () => {
   if (error || !game) return;
 
   return (
-    <div className="text-white p-5">
+    <div className="text-white p-2 ">
       <h1 className="font-bold text-4xl">{game.name}</h1>
       <ExapndableText>{game.description_raw}</ExapndableText>
       <GameAttributes game={game} />
       <GameTriler gameId={game.id} />
+      <Screenshots gameId={game.id} />
     </div>
   );
 };
