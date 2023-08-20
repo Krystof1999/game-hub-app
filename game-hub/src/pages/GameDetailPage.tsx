@@ -13,12 +13,16 @@ const GameDetailPage = () => {
   if (error || !game) return;
 
   return (
-    <div className="text-white p-2 ">
-      <h1 className="font-bold text-4xl">{game.name}</h1>
-      <ExapndableText>{game.description_raw}</ExapndableText>
-      <GameAttributes game={game} />
-      <GameTriler gameId={game.id} />
-      <Screenshots gameId={game.id} />
+    <div className="text-white p-2 grid md:grid-cols-2">
+      <div>
+        <h1 className="font-bold text-4xl">{game.name}</h1>
+        <ExapndableText>{game.description_raw}</ExapndableText>
+        <GameAttributes game={game} />
+      </div>
+      <div>
+        <GameTriler gameId={game.id} />
+        <Screenshots gameId={game.id} />
+      </div>
     </div>
   );
 };
